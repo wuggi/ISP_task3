@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Spritrechner {
 	
-	public static float calc(){
+	private static float calc(){
 		
 		int km;
 		float verbrauch;
