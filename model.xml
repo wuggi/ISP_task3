@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and abstract="true" mandatory="true" name="Rechner">
+				<description>
+					Rechner mit verschiedenen Funktionen
+				</description>
+				<or mandatory="true" name="Menu">
+					<description>
+						Menü um die einzelnen Rechner auswählen zu können.
+					</description>
+					<and mandatory="true" name="Mathe">
+						<description>
+							Taschenrechner mit verschiedenen Optionen
+						</description>
+						<feature mandatory="true" name="Grundrechenarten">
+							<description>
+								Enthält die Grundrechenarten
+							</description>
+						</feature>
+						<feature name="Wissenschaftlich">
+							<description>
+								Erweitert die Grundrechenarten um Potenzen, Wurzeln etc.
+							</description>
+						</feature>
+						<and name="Kurvendiskussion">
+							<description>
+								Erweiterung des Taschenrechners um Kurvendiskussion
+							</description>
+							<feature name="Funktionsanzeige">
+								<description>
+									Graphische Anzeige der erstellten Funktionen
+								</description>
+							</feature>
+						</and>
+					</and>
+					<or mandatory="true" name="Finanzen">
+						<description>
+							Zins- und Waehrungumrechner
+						</description>
+						<feature mandatory="true" name="Waehrungsumrechner">
+							<description>
+								Der Währungsumrechner rechnet eine Währungen in eine andere um.
+								Beispielsweise von Euro in Dollar
+							</description>
+						</feature>
+						<feature mandatory="true" name="Zinsrechner">
+							<description>
+								Der Zinsrechner berechnet aus Nutzereingaben beispielsweise das Endkapital nach einer bestimmten Laufzeit o.ä.
+							</description>
+						</feature>
+					</or>
+					<or mandatory="true" name="Physik">
+						<description>
+							Physik Rechner
+						</description>
+						<feature mandatory="true" name="Einheitenrechner">
+							<description>
+								Der Einheitenrechner rechnet verschiedene Einheiten ineinander um
+								zB  PS zu kW
+							</description>
+						</feature>
+						<feature mandatory="true" name="Mechanik">
+							<description>
+								Berechnungen von Mechanikformeln z.B freier Fall etc.
+							</description>
+						</feature>
+						<feature mandatory="true" name="Optik">
+							<description>
+								Berechnung von Formeln aus der Optik z.B. Brechzahlen
+							</description>
+						</feature>
+					</or>
+					<feature mandatory="true" name="Notenrechner">
+						<description>
+							Berechnet die Durhscnittsnote anhand von Noten und CPs
+						</description>
+					</feature>
+					<or mandatory="true" name="Zeit">
+						<description>
+							Rechnen mit Zeiteinheiten
+						</description>
+						<feature mandatory="true" name="Datumsrechner">
+							<description>
+								Gibt den Wochentag für ein angegebenes Datum aus
+							</description>
+						</feature>
+						<feature mandatory="true" name="Stoppuhr">
+							<description>
+								Stoppuhr mit Start- und Stopfunktion
+							</description>
+						</feature>
+						<feature mandatory="true" name="Weltzeituhr">
+							<description>
+								Zeigt die aktuelle Zeit für jede Zeitzone der Welt an
+							</description>
+						</feature>
+					</or>
+					<or mandatory="true" name="Auto">
+						<description>
+							Beinhaltet relevante Rechenoperationen für Autofahrer
+						</description>
+						<feature mandatory="true" name="Spritrechner">
+							<description>
+								Rechnet mit durschnittl. Spritverbrauch, zu fahrenden Kilometern und aktuellen Bebzinpreisen den Spritverbrauch und die Kosten aus.
+							</description>
+						</feature>
+						<feature mandatory="true" name="Bussgeldrechner">
+							<description>
+								Berechnet anhand vom Vergehen und weiterer Angaben das Bußgeld und die Punkte in Flensburg
+							</description>
+						</feature>
+						<feature mandatory="true" name="Fahrtenbuch">
+							<description>
+								Eingabe von gefahrenen Kilometern und Zweck der Fahrt. Berechnung von gefahrenen Kilometern im Monat, durschnitl gefahren im Monat etc.
+							</description>
+						</feature>
+					</or>
+					<feature mandatory="true" name="Formelsammlung">
+						<description>
+							Beeinhaltet alle/viele Formeln der Mathematik
+						</description>
+					</feature>
+				</or>
+				<alt abstract="true" mandatory="true" name="GUI">
+					<description>
+						Abstraktion des User Interfaces 
+						Entweder es gibt eine grafische Oberfläche oder jedes Werkzeug
+						wird textuell über die Konsole gesteuert
+					</description>
+					<feature mandatory="true" name="Mobile"/>
+					<alt mandatory="true" name="PC">
+						<feature mandatory="true" name="Textuell">
+							<description>
+								Konsolensteuerung
+							</description>
+						</feature>
+						<feature mandatory="true" name="Graphisch">
+							<description>
+								Graphische Oberfläche für das Menü und möglichst jedes Werkzeug
+							</description>
+						</feature>
+					</alt>
+					<feature mandatory="true" name="Web"/>
+				</alt>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<imp>
+					<var>Funktionsanzeige</var>
+					<var>Graphisch</var>
+				</imp>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
