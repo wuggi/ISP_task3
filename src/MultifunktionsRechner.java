@@ -45,51 +45,58 @@ public class MultifunktionsRechner extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JButton btnNewButton = new JButton("SpritRechner");
-		btnNewButton.setBounds(10, 482, 117, 56);
-		btnNewButton.addMouseListener(new MouseAdapter() {
+		JButton btnSpritRechner = new JButton("SpritRechner");
+		btnSpritRechner.setBounds(10, 482, 117, 56);
+		btnSpritRechner.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				Spritrechner_ frame2 = new Spritrechner_();
+				Spritrechner frame2 = new Spritrechner();
 				frame2.setVisible(true);
 			}
 		});
-		btnNewButton.addActionListener(new ActionListener() {
+		btnSpritRechner.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			}
 		});
 		contentPane.setLayout(null);
-		contentPane.add(btnNewButton);
+		contentPane.add(btnSpritRechner);
 		
-		JButton btnNewButton_1 = new JButton("Zinsrechner");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnZinsrechner = new JButton("Zinsrechner");
+		btnZinsrechner.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Zinsrechner frame2 = new Zinsrechner();
+				frame2.setVisible(true);
+			}
+		});
+		btnZinsrechner.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton_1.setBounds(137, 482, 117, 56);
-		contentPane.add(btnNewButton_1);
+		btnZinsrechner.setBounds(137, 482, 117, 56);
+		contentPane.add(btnZinsrechner);
 		
-		JButton btnNewButton_2 = new JButton("Grundrechenarten");
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
+		JButton btnGrundrechenarten = new JButton("Grundrechenarten");
+		btnGrundrechenarten.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Grundrechenarten_ frame1 = new Grundrechenarten_();
+				Grundrechenarten frame1 = new Grundrechenarten();
 				frame1.setVisible(true);
 			}
 		});
-		btnNewButton_2.addActionListener(new ActionListener() {
+		btnGrundrechenarten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_2.setBounds(264, 482, 145, 56);
-		contentPane.add(btnNewButton_2);
+		btnGrundrechenarten.setBounds(264, 482, 145, 56);
+		contentPane.add(btnGrundrechenarten);
 		
 		JTextPane txtpnMultifunktionsrechner = new JTextPane();
-		txtpnMultifunktionsrechner.setBackground(Color.LIGHT_GRAY);
-		txtpnMultifunktionsrechner.setFont(new Font("Times New Roman", Font.BOLD, 27));
-		txtpnMultifunktionsrechner.setText("Multifunktionsrechner");
-		txtpnMultifunktionsrechner.setBounds(298, 11, 280, 38);
+		txtpnMultifunktionsrechner.setEditable(false);
+		txtpnMultifunktionsrechner.setFont(new Font("Times New Roman", Font.BOLD, 26));
+		txtpnMultifunktionsrechner.setText("MultifunktionsRechner");
+		txtpnMultifunktionsrechner.setBounds(305, 11, 276, 32);
 		contentPane.add(txtpnMultifunktionsrechner);
 	}
 }
