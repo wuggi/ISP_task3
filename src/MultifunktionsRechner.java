@@ -45,6 +45,7 @@ public class MultifunktionsRechner extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
+		//#if Spritrechner
 		JButton btnSpritRechner = new JButton("SpritRechner");
 		btnSpritRechner.setBounds(10, 482, 117, 56);
 		btnSpritRechner.addMouseListener(new MouseAdapter() {
@@ -59,9 +60,12 @@ public class MultifunktionsRechner extends JFrame {
 				
 			}
 		});
-		contentPane.setLayout(null);
-		contentPane.add(btnSpritRechner);
 		
+		contentPane.add(btnSpritRechner);
+		//#endif
+		contentPane.setLayout(null);
+		
+		//#if Zinsrechner
 		JButton btnZinsrechner = new JButton("Zinsrechner");
 		btnZinsrechner.addMouseListener(new MouseAdapter() {
 			@Override
@@ -76,7 +80,8 @@ public class MultifunktionsRechner extends JFrame {
 		});
 		btnZinsrechner.setBounds(137, 482, 117, 56);
 		contentPane.add(btnZinsrechner);
-		
+		//#endif
+		//#if Grundrechenarten
 		JButton btnGrundrechenarten = new JButton("Grundrechenarten");
 		btnGrundrechenarten.addMouseListener(new MouseAdapter() {
 			@Override
@@ -91,6 +96,7 @@ public class MultifunktionsRechner extends JFrame {
 		});
 		btnGrundrechenarten.setBounds(264, 482, 145, 56);
 		contentPane.add(btnGrundrechenarten);
+		//#endif
 		
 		JTextPane txtpnMultifunktionsrechner = new JTextPane();
 		txtpnMultifunktionsrechner.setEditable(false);
