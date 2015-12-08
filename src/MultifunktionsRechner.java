@@ -104,5 +104,41 @@ public class MultifunktionsRechner extends JFrame {
 		txtpnMultifunktionsrechner.setText("MultifunktionsRechner");
 		txtpnMultifunktionsrechner.setBounds(305, 11, 276, 32);
 		contentPane.add(txtpnMultifunktionsrechner);
+		
+		//#if Einheitenrechner
+		JButton btnEinheitenrechner = new JButton("Einheitenrechner");
+		btnEinheitenrechner.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Einheitenrechner frame1 = new Einheitenrechner();
+				frame1.setVisible(true);
+			}
+		});
+		btnEinheitenrechner.setBounds(419, 482, 145, 56);
+		contentPane.add(btnEinheitenrechner);
+		//#endif
+		
+		//#if Waehrungsumrechner
+		JButton btnWhrungsumrechner = new JButton("W\u00E4hrungsumrechner");
+		btnWhrungsumrechner.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Waehrungsumrechner frame1 = new Waehrungsumrechner();
+				frame1.setVisible(true);
+			}
+		});
+		btnWhrungsumrechner.setBounds(575, 482, 145, 56);
+		contentPane.add(btnWhrungsumrechner);
+		//#endif
+		
+		//#if Formelsammlung
+		JButton btnFormelsammlung = new JButton("Formelsammlung");
+		btnFormelsammlung.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Formelsammlung frame1 = new Formelsammlung();
+				frame1.setVisible(true);
+			}
+		});
+		btnFormelsammlung.setBounds(730, 482, 145, 56);
+		contentPane.add(btnFormelsammlung);
+		//#endif
 	}
 }
